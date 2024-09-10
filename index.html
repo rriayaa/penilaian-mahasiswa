@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penilaian Pemrograman Internet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Penilaian Matakuliah Pemrograman Internet</h2>
+        <form action="process.php" method="POST">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required><br>
+            
+            <label for="nim">NIM:</label>
+            <input type="text" id="nim" name="nim" required><br>
+
+            <label for="nilai">Nilai Angka (0-100):</label>
+            <input type="number" id="nilai" name="nilai" min="0" max="100" required><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
