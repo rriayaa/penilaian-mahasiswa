@@ -1,8 +1,8 @@
 <?php
 // Koneksi ke database
 $servername = "localhost";
-$username = "root"; // Ganti sesuai pengaturan database Anda
-$password = ""; // Ganti sesuai pengaturan database Anda
+$username = "root";
+$password = "";
 $dbname = "db_nilai";
 
 // Membuat koneksi
@@ -18,40 +18,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nim = $_POST['nim'];
     $nilai = $_POST['nilai'];
 
-    // Konversi Nilai Angka ke Huruf
-    if ($nilai >= 85) {
-        $grade = 'A';
-    } elseif ($nilai >= 80) {
-        $grade = 'B+';
-    } elseif ($nilai >= 75) {
-        $grade = 'B';
-    } elseif ($nilai >= 70) {
-        $grade = 'C+';
-    } elseif ($nilai >= 65) {
-        $grade = 'C';
-    } elseif ($nilai >= 50) {
-        $grade = 'D';
-    } else {
-        $grade = 'E';
+    // Validasi Nama: hanya huruf dan spasi
+    if (!preg_match("/^[a-zA-Z\s]*$/", $nama)) {
+        $message = "Nama hanya boleh berisi huruf dan spasi!";
     }
-
-    // Menyimpan ke database
-    $sql = "INSERT INTO nilai_mahasiswa (nama, nim, nilai_angka, nilai_huruf) VALUES ('$nama', '$nim', '$nilai', '$grade')";
-
-    if ($conn->query($sql) === TRUE) {
-        $message = "<h3>Data berhasil disimpan!</h3>
-                    <p>Nama: $nama</p>
-                    <p>NIM: $nim</p>
-                    <p>Nilai Angka: $nilai</p>
-                    <p>Nilai Huruf: $grade</p>";
+    // Validasi NIM: hanya angka
+    elseif (!filter_var($nim, FILTER_VALIDATE_INT)) {
+        $message = "NIM harus berupa angka!";
+    }
+    // Validasi Nilai: hanya angka
+    elseif (!filter_var($nilai, FILTER_VALIDATE_INT) || $nilai < 0 || $nilai > 100) {
+        $message = "Nilai harus berupa angka antara 0 dan 100!";
     } else {
-        $message = "Error: " . $sql . "<br>" . $conn->error;
+        // Konversi Nilai Angka ke Huruf
+        if ($nilai >= 80) {
+            $grade = 'A';
+        } elseif ($nilai >= 71) {
+            $grade = 'B+';
+        } elseif ($nilai >= 65) {
+            $grade = 'B';
+        } elseif ($nilai >= 60) {
+            $grade = 'C+';
+        } elseif ($nilai >= 55) {
+            $grade = 'C';
+        } elseif ($nilai >= 50) {
+            $grade = 'D+';
+        } elseif ($nilai >= 40) {
+            $grade = 'D';
+        } else {
+            $grade = 'E';
+        }
+
+        // Menyimpan ke database
+        $sql = "INSERT INTO nilai_mahasiswa (nama, nim, nilai_angka, nilai_huruf) VALUES ('$nama', '$nim', '$nilai', '$grade')";
+
+        if ($conn->query($sql) === TRUE) {
+            $message = "<h3>Data berhasil disimpan!</h3>
+                        <p>Nama: $nama</p>
+                        <p>NIM: $nim</p>
+                        <p>Nilai Angka: $nilai</p>
+                        <p>Nilai Huruf: $grade</p>";
+        } else {
+            $message = "Error: " . $sql . "<br>" . $conn->error;
+        }
     }
 
     // Menutup koneksi
     $conn->close();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

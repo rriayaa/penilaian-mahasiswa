@@ -1,62 +1,76 @@
 body {
-    background-color: #ffe4e1;
+    background-color: #fce4ec; /* Warna latar belakang pink pastel yang lebih imut */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    height: 100vh; /* Menyeting tinggi body agar 100% tinggi viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Pusatkan konten secara horizontal dan vertikal */
 }
 
 .form-container {
-    background-color: #ffc0cb;
+    background-color: #ffffff; /* Warna kotak form putih */
     padding: 20px;
-    margin: 50px auto;
-    border-radius: 10px;
-    width: 300px;
+    border-radius: 15px;
+    width: 320px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan lembut untuk kesan 3D */
 }
 
 h2 {
-    color: #ff69b4;
+    color: #ec407a; /* Pink cerah */
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 label {
-    color: #d2691e;
+    color: #ff1493; /* Warna teks label pink terang agar kontras dengan background */
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Mengurangi jarak antara label dan input */
+    text-align: left; /* Teks label rata kiri */
+    font-weight: bold; /* Memberikan penekanan pada label */
 }
 
 input[type="text"], input[type="number"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #ff1493;
-    border-radius: 5px;
+    width: 100%; /* Memastikan input menyesuaikan lebar form */
+    padding: 12px; /* Padding lebih besar untuk kenyamanan */
+    margin: 10px 0 20px 0; /* Tambahkan margin bawah untuk memberikan jarak antara input */
+    border: 2px solid #ff1493; /* Warna pink terang untuk border */
+    border-radius: 8px; /* Sudut border lebih membulat */
     background-color: rgba(255, 255, 255, 0); /* Awalnya bening */
     box-sizing: border-box;
-    transition: background-color 0.3s ease; /* Efek transisi */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Efek transisi untuk background dan bayangan */
+    box-shadow: 0 4px 6px rgba(255, 105, 180, 0.2); /* Efek bayangan 3D */
 }
 
 /* Jika kolom sudah diisi */
 input[type="text"]:not(:placeholder-shown), 
 input[type="number"]:not(:placeholder-shown) {
-    background-color: #ffffff; /* Menjadi putih setelah diisi */
+    background-color: #fff0f5; /* Menjadi putih dengan sedikit sentuhan pink setelah diisi */
 }
 
 /* Mengubah border dan background saat input difokuskan (diklik) */
 input[type="text"]:focus, input[type="number"]:focus {
     border-color: #ff69b4; /* Ganti warna border saat fokus */
     outline: none; /* Menghilangkan outline default */
+    background-color: #ffffff; /* Putih sepenuhnya saat fokus */
+    box-shadow: 0 6px 10px rgba(255, 105, 180, 0.4); /* Efek bayangan lebih dalam saat fokus */
 }
 
 input[type="submit"] {
-    background-color: #ff69b4;
+    background-color: #ec407a; /* Pink cerah */
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(255, 105, 180, 0.2); /* Efek bayangan pada tombol */
 }
 
 input[type="submit"]:hover {
-    background-color: #ff1493;
+    background-color: #ff1493; /* Warna pink lebih terang saat hover */
+    box-shadow: 0 6px 10px rgba(255, 105, 180, 0.4); /* Bayangan lebih dalam saat hover */
 }
