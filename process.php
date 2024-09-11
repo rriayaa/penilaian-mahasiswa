@@ -77,8 +77,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Hasil Penilaian</title>
     <style>
         body {
-            background-color: #fce4ec; /* Warna latar belakang pink pastel */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font yang lebih formal */
+            background-color: #fce4ec; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             margin: 0;
             padding: 0;
             display: flex;
@@ -88,22 +88,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .result-container {
-            background-color: #f8bbd0; /* Kotak hasil pink pastel */
+            background-color: #f8bbd0; 
             padding: 30px;
             border-radius: 15px;
             width: 350px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
         }
 
         .result-container h3 {
-            color: #ec407a; /* Judul hasil pink cerah */
+            color: #ec407a; 
             font-size: 26px;
             margin-bottom: 20px;
         }
 
         .result-container p {
-            color: #d81b60; /* Teks hasil pink gelap */
+            color: #d81b60; 
             margin: 10px 0;
         }
 
@@ -111,16 +111,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             display: inline-block;
             margin-top: 20px;
             padding: 12px 24px;
-            background-color: #ec407a; /* Tombol kembali pink cerah */
+            background-color: #ec407a; 
             color: white;
             text-decoration: none;
             border-radius: 10px;
             font-size: 16px;
-            transition: background-color 0.3s ease; /* Transisi warna tombol kembali */
+            transition: background-color 0.3s ease; 
         }
 
         .result-container a:hover {
-            background-color: #d81b60; /* Tombol kembali pink gelap saat hover */
+            background-color: #d81b60;
         }
     </style>
 </head>
