@@ -1,12 +1,12 @@
 body {
-    background-color: #fce4ec; /* Warna latar belakang pink pastel yang lebih imut */
+    background-color: #fce4ec; /* Warna latar belakang pink pastel */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    height: 100vh; /* Menyeting tinggi body agar 100% tinggi viewport */
+    height: 100vh; /* Menyeting tinggi body */
     display: flex;
     justify-content: center;
-    align-items: center; /* Pusatkan konten secara horizontal dan vertikal */
+    align-items: center; /* Pusatkan secara horizontal dan vertikal */
 }
 
 .form-container {
@@ -15,7 +15,7 @@ body {
     border-radius: 15px;
     width: 320px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan lembut untuk kesan 3D */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk 3D */
 }
 
 h2 {
@@ -37,24 +37,24 @@ input[type="text"], input[type="number"] {
     padding: 12px; /* Padding lebih besar untuk kenyamanan */
     margin: 10px 0 20px 0; /* Tambahkan margin bawah untuk memberikan jarak antara input */
     border: 2px solid #ff1493; /* Warna pink terang untuk border */
-    border-radius: 8px; /* Sudut border lebih membulat */
-    background-color: rgba(255, 255, 255, 0); /* Awalnya bening */
+    border-radius: 8px; 
+    background-color: rgba(255, 255, 255, 0);
     box-sizing: border-box;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Efek transisi untuk background dan bayangan */
-    box-shadow: 0 4px 6px rgba(255, 105, 180, 0.2); /* Efek bayangan 3D */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(255, 105, 180, 0.2); /* Efek 3D */
 }
 
 /* Jika kolom sudah diisi */
 input[type="text"]:not(:placeholder-shown), 
 input[type="number"]:not(:placeholder-shown) {
-    background-color: #fff0f5; /* Menjadi putih dengan sedikit sentuhan pink setelah diisi */
+    background-color: #fff0f5; /* Menjadi putih pink setelah diisi */
 }
 
-/* Mengubah border dan background saat input difokuskan (diklik) */
+/* Mengubah border dan background saat input diklik*/
 input[type="text"]:focus, input[type="number"]:focus {
     border-color: #ff69b4; /* Ganti warna border saat fokus */
     outline: none; /* Menghilangkan outline default */
-    background-color: #ffffff; /* Putih sepenuhnya saat fokus */
+    background-color: #ffffff; /* Putih saat fokus */
     box-shadow: 0 6px 10px rgba(255, 105, 180, 0.4); /* Efek bayangan lebih dalam saat fokus */
 }
 
